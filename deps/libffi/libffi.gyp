@@ -73,14 +73,7 @@
             'outputs': [
               '<(INTERMEDIATE_DIR)/<(RULE_INPUT_ROOT).asm',
             ],
-            'action': [
-              'call',
-              'preprocess_asm.cmd',
-                'include',
-                'config/<(OS)/<(target_arch)',
-                '<(RULE_INPUT_PATH)',
-                '<(INTERMEDIATE_DIR)/<(RULE_INPUT_ROOT).asm',
-            ],
+          'action': [ 'preprocess_asm.cmd', '<(pkg_config_path)', '<(OS)', '<(asm_path)', '<(asm_out_path)' ],
             'message': 'Preprocessing assembly file <(RULE_INPUT_PATH)',
             'process_outputs_as_sources': 1,
           },
